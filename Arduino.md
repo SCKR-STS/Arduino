@@ -2,6 +2,17 @@
 ![Arduino](./Slike/arduino.jpeg)
 ## 1. Uvod v Arduino in IoT
 ### 1.1 Kaj je Arduino
+Arduino je odprtokodna platforma, ki omogoča enostaven razvoj elektronskih projektov. Sestavlja jo programska (Arduino IDE) in strojna oprema (različne razvojne plošče). Glavna prednost Arduina je njegova preprostost, cenovna dostopnost in velika skupnost uporabnikov, ki omogoča hitro učenje in razvoj.
+
+Arduino temelji na mikrokontrolerjih podjetja Atmel (npr. ATmega328) in omogoča interakcijo z različnimi senzorji, aktuatorji in komunikacijskimi moduli. Z Arduinom lahko nadzorujemo osvetlitev, motorje, temperaturo in druge elektronske komponente, zaradi česar je zelo priljubljen v projektih pametnega doma, robotike in interneta stvari (IoT).
+
+#### Primeri Arduino plošč:
+- **Arduino Uno** – Najbolj priljubljena razvojna plošča, temelji na ATmega328P, ima 14 digitalnih vhodno/izhodnih pinov, 6 analognih vhodov in USB povezavo.
+- **Arduino Mega** – Zmogljivejša različica z več vhodi in izhodi, primerna za kompleksne projekte.
+- **Arduino Nano** – Majhna in kompaktna različica, idealna za vgrajene sisteme.
+- **Arduino Leonardo** – Ima integriran USB, kar omogoča simulacijo tipkovnice ali miške.
+- **Arduino Due** – Temelji na 32-bitnem ARM procesorju, primeren za naprednejše projekte.
+- **Arduino MKR serija** – Plošče z integrirano WiFi/Bluetooth povezljivostjo, namenjene IoT aplikacijam.
 ### 1.2 Osnovne komponente Arduino sistema
 ### 1.3 Kaj je IoT in kako se povezuje z Arduinom?
 ### 1.4 Priprava razvojnega okolja (Arduino IDE, knjižnice)
