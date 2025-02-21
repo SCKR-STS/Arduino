@@ -20,12 +20,15 @@ Idealen za projekte, ki zahtevajo oddaljeni dostop in obdelavo podatkov v realne
 ![nano](./Slike/nano.png)
 
 - **Arduino Leonardo** – Ima integriran USB, kar omogoča simulacijo tipkovnice ali miške.
+  
 ![leonardo](./Slike/leonardo.png)
 
 - **Arduino Due** – Temelji na 32-bitnem ARM procesorju, primeren za naprednejše projekte.
+  
 ![due](./Slike/due.jpeg)
 
 - **Arduino MKR serija** – Plošče z integrirano WiFi/Bluetooth povezljivostjo, namenjene IoT aplikacijam.
+
 ![MKR](./Slike/MKR.png)
 
 ### 1.2 Osnovne komponente Arduino sistema
