@@ -1,4 +1,4 @@
-# Spletni učbenik: Arduino in IoT
+# Spletni učbenik: Arduino
 
 ## 1. Uvod v Arduino in IoT
 ### 1.1 Kaj je Arduino
