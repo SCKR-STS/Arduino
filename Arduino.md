@@ -1,5 +1,5 @@
 # Spletni učbenik: Arduino
-
+![Arduino](./Slike/arduino.jpeg)
 ## 1. Uvod v Arduino in IoT
 ### 1.1 Kaj je Arduino
 ### 1.2 Osnovne komponente Arduino sistema
