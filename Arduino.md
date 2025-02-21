@@ -13,7 +13,10 @@ Arduino temelji na mikrokontrolerjih podjetja Atmel (npr. ATmega328) in omogoča
 - **Arduino Mega** – Zmogljivejša različica z več vhodi in izhodi, primerna za kompleksne projekte.
 ![MEGA](./Slike/MEGA.svg)
 
-- **Arduino Nano** – Majhna in kompaktna različica, idealna za vgrajene sisteme.
+- **Arduino IoT** – Razvojna plošča, posebej zasnovana za internet stvari (IoT).
+Vsebuje integrirano WiFi ali Bluetooth povezljivost ter podporo za varno povezovanje z oblačnimi storitvami.
+Idealen za projekte, ki zahtevajo oddaljeni dostop in obdelavo podatkov v realnem času.
+
 ![nano](./Slike/nano.png)
 
 - **Arduino Leonardo** – Ima integriran USB, kar omogoča simulacijo tipkovnice ali miške.
