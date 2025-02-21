@@ -87,7 +87,7 @@ Idealen za projekte, ki zahtevajo oddaljeni dostop in obdelavo podatkov v realne
 ### 11.2 Osnove kibernetske varnosti v IoT napravah
 ### 11.3 Šifriranje podatkov in zaščita komunikacije
 
-##TEST
+## 12. TEST
 
 $A =$ <script modify="false" input="range" step="0.1" min="0.5" max="5" value="1" output="A">@input</script>,  
 $f =$ <script modify="false" input="range" step="0.1" min="0.1" max="5" value="1" output="f">@input</script>,  
