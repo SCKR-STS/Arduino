@@ -9,14 +9,19 @@ Arduino temelji na mikrokontrolerjih podjetja Atmel (npr. ATmega328) in omogoča
 #### Primeri Arduino plošč:
 - **Arduino Uno** – Najbolj priljubljena razvojna plošča, temelji na ATmega328P, ima 14 digitalnih vhodno/izhodnih pinov, 6 analognih vhodov in USB povezavo.
 ![UNO](./Slike/UNO.png)
+
 - **Arduino Mega** – Zmogljivejša različica z več vhodi in izhodi, primerna za kompleksne projekte.
 ![MEGA](./Slike/MEGA.svg)
+
 - **Arduino Nano** – Majhna in kompaktna različica, idealna za vgrajene sisteme.
 ![nano](./Slike/nano.png)
+
 - **Arduino Leonardo** – Ima integriran USB, kar omogoča simulacijo tipkovnice ali miške.
 ![leonardo](./Slike/leonardo.png)
+
 - **Arduino Due** – Temelji na 32-bitnem ARM procesorju, primeren za naprednejše projekte.
 ![due](./Slike/due.jpeg)
+
 - **Arduino MKR serija** – Plošče z integrirano WiFi/Bluetooth povezljivostjo, namenjene IoT aplikacijam.
 ![MKR](./Slike/MKR.png)
 
