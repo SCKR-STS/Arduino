@@ -139,85 +139,25 @@ let option = {
 
 ## 13. TEST2
 
-## Discrete Closed-Loop Control System with PID
-
-### System Transfer Function in Z-Domain:
-$G(z) =$ <script modify="false" input="text" value="(z+0.5)/(z^2 - 1.2z + 0.36)" output="G">@input</script>
-
-### PID Controller Parameters:
+## Discrete Closed-Loop Control System with PID  
+$$ G(z) = \frac{b_0 + b_1 z^{-1} + b_2 z^{-2}}{1 + a_1 z^{-1} + a_2 z^{-2}} $$  
+$b_0 =$ <script modify="false" input="range" step="0.1" min="-2" max="2" value="0.5" output="b0">@input</script>,  
+$b_1 =$ <script modify="false" input="range" step="0.1" min="-2" max="2" value="0.5" output="b1">@input</script>,  
+$b_2 =$ <script modify="false" input="range" step="0.1" min="-2" max="2" value="0" output="b2">@input</script>,  
+$a_1 =$ <script modify="false" input="range" step="0.1" min="-2" max="2" value="-1.2" output="a1">@input</script>,  
+$a_2 =$ <script modify="false" input="range" step="0.1" min="-2" max="2" value="0.36" output="a2">@input</script>   
 $K_p =$ <script modify="false" input="range" step="0.1" min="0" max="10" value="1" output="Kp">@input</script>,  
 $K_i =$ <script modify="false" input="range" step="0.01" min="0" max="1" value="0.1" output="Ki">@input</script>,  
-$K_d =$ <script modify="false" input="range" step="0.1" min="0" max="5" value="0" output="Kd">@input</script>
-
-### Select Reference Input Signal:
-<select output="signalType">
-<option value="step">Step</option>
-<option value="ramp">Ramp</option>
-<option value="sin">Sine</option>
-</select>
-
-<script modify="false" run-once style="display: inline-block; width: 100%">
-"LIASCRIPT: ### $$ C(z) = K_p + \\frac{K_i}{1 - z^{-1}} + K_d (1 - z^{-1}) $$"
-</script>
-
-<script run-once style="display: inline-block; width: 100%">
-// PID Controller in Z-space
-function pidController(z) {
-  let Kp = @input(`Kp`);
-  let Ki = @input(`Ki`);
-  let Kd = @input(`Kd`);
-  return Kp + (Ki / (1 - z**-1)) + Kd * (1 - z**-1);
-}
-
-// System Transfer Function
-function plantTransferFunction(z) {
-  return eval(@input(`G`)); // User-defined transfer function
-}
-
-// Closed-Loop System H(z) = (C(z) * G(z)) / (1 + C(z) * G(z))
-function closedLoopResponse(z) {
-  let C = pidController(z);
-  let G = plantTransferFunction(z);
-  return (C * G) / (1 + C * G);
-}
-
-// Generate Input Signals
-function inputSignal(n) {
-  let type = "@input(`signalType`)";
-  if (type === "step") return 1;
-  if (type === "ramp") return n * 0.1;
-  if (type === "sin") return Math.sin(n * 0.1);
-  return 0;
-}
-
-// Generate Output Response
-function simulateResponse() {
-  let dataInput = [];
-  let dataOutput = [];
-  let y = 0; // Initial output
-  for (let n = 0; n <= 100; n++) {
-    let u = inputSignal(n); // Input signal
-    let H = closedLoopResponse(n); // Closed-loop transfer function
-    y = H * u; // System output
-    dataInput.push([n, u]);
-    dataOutput.push([n, y]);
-  }
-  return { input: dataInput, output: dataOutput };
-}
-
-let response = simulateResponse();
-
-let option = {
-  title: { text: 'Closed-Loop System Response' },
-  grid: { top: 40, left: 50, right: 40, bottom: 50 },
-  xAxis: { name: 'Time (n)', type: 'category' },
-  yAxis: { name: 'Amplitude' },
-  legend: { data: ['Input Signal', 'Output Response'] },
-  series: [
-    { name: 'Input Signal', type: 'line', data: response.input },
-    { name: 'Output Response', type: 'line', data: response.output }
-  ]
-};
-
-"HTML: <lia-chart option='" + JSON.stringify(option) + "'></lia-chart>"
-</script>
+$K_d =$ <script modify="false" input="range" step="0.1" min="0" max="5" value="0" output="Kd">@input</script>   
+<select output="signalType"><option value="step">Step</option><option value="ramp">Ramp</option><option value="sin">Sine</option></select>  
+<script modify="false" run-once style="display: inline-block; width: 100%">"LIASCRIPT: ### $$ C(z) = K_p + \\frac{K_i}{1 - z^{-1}} + K_d (1 - z^{-1}) $$"</script>  
+<script run-once style="display: inline-block; width: 100%">  
+function pidController(z) { let Kp = @input(`Kp`); let Ki = @input(`Ki`); let Kd = @input(`Kd`); return Kp + (Ki / (1 - z**-1)) + Kd * (1 - z**-1); }  
+function plantTransferFunction(z) { let b0 = @input(`b0`); let b1 = @input(`b1`); let b2 = @input(`b2`); let a1 = @input(`a1`); let a2 = @input(`a2`); return (b0 + b1 * z**-1 + b2 * z**-2) / (1 + a1 * z**-1 + a2 * z**-2); }  
+function closedLoopResponse(z) { let C = pidController(z); let G = plantTransferFunction(z); return (C * G) / (1 + C * G); }  
+function inputSignal(n) { let type = "@input(`signalType`)"; if (type === "step") return 1; if (type === "ramp") return n * 0.1; if (type === "sin") return Math.sin(n * 0.1); return 0; }  
+function simulateResponse() { let dataInput = []; let dataOutput = []; let y = 0; for (let n = 0; n <= 100; n++) { let u = inputSignal(n); let H = closedLoopResponse(n); y = H * u; dataInput.push([n, u]); dataOutput.push([n, y]); } return { input: dataInput, output: dataOutput }; }  
+let response = simulateResponse();  
+let option = { title: { text: 'Closed-Loop System Response' }, grid: { top: 40, left: 50, right: 40, bottom: 50 }, xAxis: { name: 'Time (n)', type: 'category' }, yAxis: { name: 'Amplitude' }, legend: { data: ['Input Signal', 'Output Response'] }, series: [{ name: 'Input Signal', type: 'line', data: response.input }, { name: 'Output Response', type: 'line', data: response.output }] };  
+"HTML: <lia-chart option='" + JSON.stringify(option) + "'></lia-chart>"  
+</script>  
