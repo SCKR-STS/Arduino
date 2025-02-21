@@ -86,3 +86,52 @@ Idealen za projekte, ki zahtevajo oddaljeni dostop in obdelavo podatkov v realne
 ### 11.1 Varčevanje z energijo (sleep mode)
 ### 11.2 Osnove kibernetske varnosti v IoT napravah
 ### 11.3 Šifriranje podatkov in zaščita komunikacije
+
+##TEST
+
+$A =$ <script modify="false" input="range" step="0.1" min="0.5" max="5" value="1" output="A">@input</script>,  
+$f =$ <script modify="false" input="range" step="0.1" min="0.1" max="5" value="1" output="f">@input</script>,  
+$ϕ =$ <script modify="false" input="range" step="0.1" min="-π" max="π" value="0" output="phi">@input</script>
+
+<script modify="false" run-once style="display: inline-block; width: 100%">
+"LIASCRIPT: ### $$f(x) = @input(`A`) \sin(@input(`f`) x + @input(`phi`))$$"
+</script>
+
+<script run-once style="display: inline-block; width: 100%">
+function func(x) {
+  return @input(`A`) * Math.sin(@input(`f`) * x + @input(`phi`));
+}
+
+function generateData() {
+  let data = [];
+  for (let i = -15; i <= 15; i += 0.1) {
+    data.push([i, func(i)]);
+  }
+  return data;
+}
+
+let option = {
+  grid: { top: 40, left: 50, right: 40, bottom: 50 },
+  xAxis: {
+    name: 'x',
+    minorTick: { show: true },
+    splitLine: { lineStyle: { color: '#999' } },
+    minorSplitLine: { show: true, lineStyle: { color: '#ddd' } }
+  },
+  yAxis: {
+    name: 'y', min: -5, max: 5,
+    minorTick: { show: true },
+    splitLine: { lineStyle: { color: '#999' } },
+    minorSplitLine: { show: true, lineStyle: { color: '#ddd' } }
+  },
+  series: [
+    {
+      type: 'line',
+      showSymbol: false,
+      data: generateData()
+    }
+  ]
+};
+
+"HTML: <lia-chart option='" + JSON.stringify(option) + "'></lia-chart>"
+</script>
