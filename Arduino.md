@@ -1,5 +1,6 @@
 # Spletni učbenik: Arduino
 ![Arduino](./Slike/arduino.jpeg)
+test
 ## 1. Uvod v Arduino in IoT
 ### 1.1 Kaj je Arduino
 Arduino je odprtokodna platforma, ki omogoča enostaven razvoj elektronskih projektov. Sestavlja jo programska (Arduino IDE) in strojna oprema (različne razvojne plošče). Glavna prednost Arduina je njegova preprostost, cenovna dostopnost in velika skupnost uporabnikov, ki omogoča hitro učenje in razvoj.
@@ -161,3 +162,4 @@ let response = simulateResponse();
 let option = { title: { text: 'Closed-Loop System Response' }, grid: { top: 40, left: 50, right: 40, bottom: 50 }, xAxis: { name: 'Time (n)', type: 'category' }, yAxis: { name: 'Amplitude' }, legend: { data: ['Input Signal', 'Output Response'] }, series: [{ name: 'Input Signal', type: 'line', data: response.input }, { name: 'Output Response', type: 'line', data: response.output }] };  
 "HTML: <lia-chart option='" + JSON.stringify(option) + "'></lia-chart>"  
 </script>  
+
