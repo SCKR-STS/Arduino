@@ -34,7 +34,7 @@ Idealen za projekte, ki zahtevajo oddaljeni dostop in obdelavo podatkov v realne
 
 - **ESP32 DevModule** – Plošče z integrirano WiFi/Bluetooth povezljivostjo, namenjene IoT aplikacijam.
 
-![ESP32](.Slike/esp32.jpg)
+![ESP32](Slike/esp32.jpg)
 
 ### 1.2 Osnovne komponente Arduino sistema
 ### 1.3 Kaj je IoT in kako se povezuje z Arduinom?
@@ -166,6 +166,7 @@ let response = simulateResponse();
 let option = { title: { text: 'Closed-Loop System Response' }, grid: { top: 40, left: 50, right: 40, bottom: 50 }, xAxis: { name: 'Time (n)', type: 'category' }, yAxis: { name: 'Amplitude' }, legend: { data: ['Input Signal', 'Output Response'] }, series: [{ name: 'Input Signal', type: 'line', data: response.input }, { name: 'Output Response', type: 'line', data: response.output }] };  
 "HTML: <lia-chart option='" + JSON.stringify(option) + "'></lia-chart>"  
 </script>  
+
 
 
 
